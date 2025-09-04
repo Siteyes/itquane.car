@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos voitures | ITQUANE Location Car</title>
+ <link rel="stylesheet" href="stylesite.css"/>
+  <link rel="stylesheet" href="nos voitures.css" />
+</head>
+<body class="cars-page">
+ 
+  <header>
+  <div class="logo">
+    <img src="logo site web.png" alt="Logo ITQUANE" />
+  </div>
+
+  <div class="menu-toggle">&#9776;</div>
+
+  <nav class="main-nav">
+      <ul>
+        <li><a href="itquane.html">Accueil</a></li>
+        <li><a href="nos voitures.html" class="active">Nos voitures</a></li>
+        <li><a href="booking.html">Réservation</a></li>
+        <li><a href="contact">contact</a></li>
+        <li><a href="a propos.html">A propos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Nos voitures disponibles</h1>
+    <h2>Choisissez parmi notre flotte moderne</h2>
+    <p>Nous proposons des voitures fiables, économiques et confortables pour tous vos besoins.</p>
+
+    <div class="car-gallery">
+      <div class="car-card">
+        <img src="car1.jpg" alt="Renault Clio" />
+        <h3>Renault Clio</h3>
+        <p>À partir de 30€/jour</p>
+        <a href="booking.html" class="btn">Réserver</a>
+      </div>
+    
+      <div  class="car-card">
+       <img src="car2.jpg" alt ="Dacia Sandero" />
+        <h3>DaciaSandero</h3>
+        <p>À partir de 28€/jour</p>
+        <a href="booking.html" class="btn">Réserver</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 ITQUANE Location Car. Tous droits réservés.
+  </footer>
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+
+  toggle.addEventListener('click', () => {
+    nav.classList.toggle('active');
+});
+</script>
+</body>
+</html>

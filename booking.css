@@ -1,0 +1,206 @@
+body.booking-page {
+  background-color: #fffdfd;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ====== HEADER ====== */
+header {
+  max-width: 915px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 4px 10px;
+  box-shadow: 0 2px 8px rgba(180, 174, 174, 0.9);
+}
+
+.logo img {
+  width: 70px;
+  height: auto;
+}
+
+/* زر القائمة ☰ */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+}
+
+/* ====== NAVIGATION ====== */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav ul li {
+  display: inline-block;
+}
+
+.main-nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.main-nav ul li a:hover {
+  background-color: #970000;
+  color: #fff;
+}
+
+.main-nav ul li a.active {
+  background-color: #750707;
+  color: #fff;
+}
+
+/* ====== MAIN CONTENT ====== */
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* ====== BOOKING FORM ====== */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  background-color: #222;
+  color: #f0f0f0;
+  transition: background-color 0.3s, outline 0.3s;
+}
+
+.booking-form input:hover,
+.booking-form select:hover {
+  background-color: #333;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  outline: 2px solid #880404;
+  background-color: #1a1a1a;
+}
+
+.booking-form label {
+  text-align: left;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.booking-form input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* ====== SUBMIT BUTTON ====== */
+#submitBtn {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  color: #fff;
+  padding: 18px 36px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#submitBtn:hover {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+/* ====== HELP SECTION ====== */
+.help {
+  margin-top: 30px;
+  font-size: 16px;
+}
+
+/* ====== FOOTER ====== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ====== RESPONSIVE MENU ====== */
+@media (max-width: 480px) {
+.menu-toggle {
+    display: block;
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.main-nav.active {
+    left: 0;
+}
+
+.main-nav ul {
+    flex-direction: column;
+    list-style: none;
+    padding-left: 20px;
+}
+
+.main-nav ul li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.booking-form {
+    padding: 20px;
+    max-width: 90%;
+}
+
+  #submitBtn {
+    padding: 14px 28px;
+    font-size: 16px;
+}
+}

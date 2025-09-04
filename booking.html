@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Réservation | ITQUANE Location Car</title>
+  <link rel="stylesheet" href="stylesite.css" />
+  <link rel="stylesheet" href="booking.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="booking-page">
+
+  <header>
+    <div class="logo">
+      <img src="logo site web.png" alt="Logo ITQUANE" />
+    </div>
+    <div class="menu-toggle">&#9776;</div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="itquane.html">Accueil</a></li>
+        <li><a href="nos voitures.html">Nos voitures</a></li>
+        <li><a href="booking.html" class="active">Réservation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="a propos.html">À propos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Confirmer votre réservation</h1>
+    <form class="booking-form" action="https://formsubmit.co/itquanecar@gmail.com" method="POST" id="bookingForm">
+      <input type="hidden" name="_next" value="confirmation.html" />
+      <input type="hidden" name="_captcha" value="false" />
+
+      <input type="text" name="Nom" id="name" placeholder="Nom complet" required />
+      <input type="email" name="Email" id="email" placeholder="Adresse e-mail" required />
+      <input type="tel" name="Téléphone" id="phone" placeholder="Numéro de téléphone" required />
+      <select name="Voiture" id="car" required>
+        <option value="">Choisissez une voiture</option>
+        <option value="Renault Clio">Renault Clio</option>
+        <option value="Peugeot 208">Peugeot 208</option>
+        <option value="Dacia Sandero">Dacia Sandero</option>
+      </select>
+      <label for="start">Date de début</label>
+      <input type="date" name="Date début" id="start" required />
+      <label for="end">Date de retour</label>
+      <input type="date" name="Date retour" id="end" required />
+      <label>
+        <input type="checkbox" name="Conditions acceptées" id="terms" required />
+        J'accepte <a href="conditions.html" target="_blank" style="color: cornflowerblue; font-weight: bold;">les conditions générales de location</a>
+      </label>
+
+      <button type="submit" id="submitBtn">Confirmer la réservation</button>
+    </form>
+
+    <div class="help">
+      <p>Besoin d'aide? Contactez-nous à
+        <a href="mailto:itquanecar@gmail.com" style="color: darkred; font-weight: bold;">itquanecar@gmail.com</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 ITQUANE Location Car. Tous droits réservés.
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+});
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const startDateInput = document.getElementById("start");
+      const endDateInput = document.getElementById("end");
+      const bookingForm = document.getElementById("bookingForm");
+
+      const today = new Date().toISOString().split("T")[0];
+      startDateInput.setAttribute("min", today);
+
+      startDateInput.addEventListener("change", function () {
+        endDateInput.value = "";
+        endDateInput.setAttribute("min", startDateInput.value);
+});
+
+      bookingForm.addEventListener("submit", function (e) {
+        const startDate = new Date(startDateInput.value);
+        const endDate = new Date(endDateInput.value);
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+
+        if (startDate < now) {
+          alert("La date de début ne peut pas être antérieure à aujourd'hui.");
+ e.preventDefault();
+          return;
+}
+
+        if (endDate <= startDate) {
+          alert("La date de retour doit être postérieure à la date de début.");
+          e.preventDefault();
+          return;
+}
+});
+});
+  </script>
+</body>
+</html>
+
